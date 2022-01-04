@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block heading %}
+Add Device
+{% endblock heading %}
+
+{% block description %}
+To add devices, please fill out the following form.
+{% endblock description %}
+
+{% block content %}
+<form method="post" action="/add_device" class="p-3 needs-validation" novalidate>
+  <div class="form-group column">
+    <label for="name" class="col-3 col-form-label">Device name</label>
+    <input class="form-control" type="text" name="name" required>
+    <div class="invalid-feedback">
+      Please enter device name
+    </div>
+  </div>
+
+  <div class="form-group column">
+    <label for="type" class="col-3 col-form-label">Device type</label>
+    <select class="form-select" type="text" name="type" required>
+      <option value="">Choose...</option>
+      <option value="bluetooth">Bluetooth</option>
+      <option value="wifi">Wi-Fi</option>
+      <option value="zigbee">Zigbee</option>
+      <option value="mqtt">MQTT</option>
+      <option value="sigfox">Sigfox</option>
+    </select>
+    <div class="invalid-feedback">
+      Please select device type
+    </div>
+  </div>
+
+  <hr class="my-3">
+  <div class="col text-center">
+    <button type="submit" class="w-100 btn btn-outline-info center">Submit</button>
+  </div>
+
+  <script src="/js/form-validation.js"></script>
+</form>
+{% endblock content %}
