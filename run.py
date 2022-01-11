@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request
+import os
+from flask import Flask, render_template, request, json, current_app as app
 
 app = Flask(__name__, static_folder="public", static_url_path="")
 
@@ -14,4 +15,14 @@ def add_device():
     print(name, type)
   return render_template("add_device.html")
 
-app.run('127.0.0.1', port = 5500, debug = True)
+@app.route("/api/show_questions/<string:type>")
+def api_show_questions(type):
+  filename = os.path.join(app.static_folder, "json", type+ "_questions.json")
+  with open(filename) as f:
+    questions = json.load(f)
+  print(questions)
+  f.close()
+  return questions
+
+if __name__ == "__main__":
+  app.run('127.0.0.1', port = 5500, debug = True)

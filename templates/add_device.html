@@ -20,11 +20,12 @@ To add devices, please fill out the following form.
 
   <div class="form-group column">
     <label for="type" class="col-3 col-form-label">Device type</label>
-    <select class="form-select" type="text" name="type" required>
+    <select class="form-select" type="text" name="type" id="type" required>
       <option value="">Choose...</option>
       <option value="bluetooth">Bluetooth</option>
       <option value="wifi">Wi-Fi</option>
       <option value="zigbee">Zigbee</option>
+      <option value="lora">Lora</option>
       <option value="mqtt">MQTT</option>
       <option value="sigfox">Sigfox</option>
     </select>
@@ -33,11 +34,19 @@ To add devices, please fill out the following form.
     </div>
   </div>
 
-  <hr class="my-3">
+  <div class="form-group column" id="device-questions">
+
+  </div>
+
+  <hr class=" my-3">
   <div class="col text-center">
     <button type="submit" class="w-100 btn btn-outline-info center">Submit</button>
   </div>
 
-  <script src="/js/form-validation.js"></script>
 </form>
 {% endblock content %}
+
+{% block script %}
+<script src="/js/form_validation.js"></script>
+<script src="/js/device_type.js"></script>
+{% endblock script %}

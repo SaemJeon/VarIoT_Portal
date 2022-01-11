@@ -1,0 +1,22 @@
+{
+  "questions": [
+    {
+      "inputType": "text",
+      "label": "Manufacturer",
+      "name": "manufacturer",
+      "invalid": "Please enter manufacturer name"
+    },
+    {
+      "inputType": "text",
+      "label": "IP Address",
+      "name": "ip",
+      "invalid": "Please enter IP address"
+    },
+    {
+      "inputType": "select",
+      "label": "Test Select",
+      "options": ["option1", "option2"],
+      "invalid": "Please select option"
+    }
+  ]
+}

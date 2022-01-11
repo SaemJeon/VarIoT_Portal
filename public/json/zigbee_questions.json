@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "inputType": "text",
+      "label": "Manufacturer",
+      "name": "manufacturer",
+      "invalid": "Please enter manufacturer name"
+    },
+    {
+      "inputType": "text",
+      "label": "MAC Address",
+      "name": "mac",
+      "invalid": "Please enter MAC address"
+    }
+  ]
+}
